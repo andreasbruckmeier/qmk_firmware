@@ -5,7 +5,7 @@
 
 
 #define SPC_SH   RSFT_T(KC_SPC)
-#define ENT_AL   RALT_T(KC_ENT)
+#define ENT_AL   LCA_T(KC_ENT)
 #define SPC_SHL  LSFT_T(KC_SPC)
 #define BSP_CT   LCTL_T(KC_BSPC)
 
