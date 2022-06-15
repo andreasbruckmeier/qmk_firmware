@@ -4,9 +4,9 @@
 #include QMK_KEYBOARD_H
 
 
-#define SPC_SH   RSFT_T(KC_SPC)
-#define ENT_AL   LCA_T(KC_ENT)
 #define SPC_SHL  LSFT_T(KC_SPC)
+#define SPC_SH   RSFT_T(KC_SPC)
+#define ENT_AL   LALT_T(KC_ENT)
 #define BSP_CT   LCTL_T(KC_BSPC)
 
 #define RAISE    MO(_RAISE)
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT_split_3x6_3(
         KC_ESC  , KC_Q , KC_W , KC_F , KC_P  , KC_B ,                     KC_J   , KC_L , KC_U    , KC_Y   , KC_SCLN , KC_MINS ,
         KC_TAB  , KC_A , KC_R , KC_S , KC_T  , KC_G ,                     KC_M   , KC_N , KC_E    , KC_I   , KC_O    , KC_QUOT ,
-        KC_LGUI , KC_Z , KC_X , KC_C , KC_D  , KC_V ,                     KC_K   , KC_H , KC_COMM , KC_DOT , KC_SLSH , KC_BSLS ,
+        KC_LGUI , KC_Z , KC_X , KC_C , KC_D  , KC_V ,                     KC_K   , KC_H , KC_COMM , KC_DOT , KC_SLSH , KC_PIPE ,
                                        RAISE , SPC_SHL, BSP_CT , ENT_AL , SPC_SH , LOWER
     ),
      /* RAISE
@@ -110,9 +110,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 };
 
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, BSP_CT, KC_DEL);
+const key_override_t swap_backslash_and_pipe = ko_make_basic(MOD_MASK_SHIFT, KC_PIPE, KC_BACKSLASH);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &delete_key_override,
+    &swap_backslash_and_pipe,
     NULL // Null terminate the array of overrides!
 };
