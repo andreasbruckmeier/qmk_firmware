@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
      /* ADJUST
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │F10│F7 │F8 │F9 │   │       │CAL│   │   │   │   │   │
+      * │ H │F10│F7 │F8 │F9 │   │       │CAL│   │   │   │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
       * │   │F11│F4 │F5 │F6 │   │       │PRI│PLY│PRV│NXT│   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                       └───┘   └───┘
       */
     [_ADJUST] = LAYOUT_split_3x6_3(
-        _______ , KC_F10 , KC_F7 , KC_F8 , KC_F9   , XXXXXXX ,                     KC_CALC , _______ , _______ , _______ , _______ , _______    ,
+        LGUI(KC_V) , KC_F10 , KC_F7 , KC_F8 , KC_F9   , XXXXXXX ,                     KC_CALC , _______ , _______ , _______ , _______ , _______    ,
         _______ , KC_F11 , KC_F4 , KC_F5 , KC_F6   , XXXXXXX ,                     KC_PSCR , KC_MPLY , KC_MPRV , KC_MNXT , _______ , _______    ,
         _______ , KC_F12 , KC_F1 , KC_F2 , KC_F3   , XXXXXXX ,                     LGUI(KC_L) , KC_MUTE , KC_VOLD , KC_VOLU , _______ , _______ ,
                                            _______ , _______ , _______ , _______ , _______ , _______
